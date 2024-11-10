@@ -22,22 +22,23 @@ plt.legend()
 plt.grid()
 plt.show()
 
-country = input("Enter country name for bar chart (Ukraine or United Kingdom): ")
+while(True):
+    country = input("Enter country name for bar chart (Ukraine or United Kingdom): ")
 
-if country == 'Ukraine':
-    country_data = ukraine_values
-    color = 'b'
-elif country == 'United Kingdom':
-    country_data = usa_values
-    color = 'r'
-else:
-    print("Invalid country name.")
-    exit()
+    if country == 'Ukraine':
+        country_data = ukraine_values
+        color = 'b'
+    elif country == 'United Kingdom':
+        country_data = usa_values
+        color = 'r'
+    else:
+        print("Invalid country name.")
+        exit()
 
-plt.figure(figsize=(10, 5))
-plt.bar(years, country_data, color=color)
-plt.xlabel('Year')
-plt.ylabel('Children out of school, primary')
-plt.title(f'Children out of school, primary in {country} (2002-2014)')
-plt.grid(axis='y')
-plt.show()
+    plt.figure(figsize=(10, 5))
+    plt.bar(years, country_data, color=color)
+    plt.xlabel('Year')
+    plt.ylabel('Children out of school, primary')
+    plt.title(f'Children out of school, primary in {country} (2002-2014)')
+    plt.grid(axis='y')
+    plt.show()
